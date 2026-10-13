@@ -1,20 +1,332 @@
-<section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>
-          Interested in research collaborations
-          or learning more about my work?
-        </p>
-        <p>
-          Contact information coming soon.
-        </p>
-      </div>
-    </section>
-  </main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emily Waggoner, Ph.D.</title>
 
-  <footer>
-    © 2026 Emily Waggoner
-  </footer>
+<style>
+:root {
+  --navy: #193b4d;
+  --teal: #397b86;
+  --text: #273740;
+  --light: #f2f6f7;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+header {
+  background: white;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-bottom: 1px solid #e4e9ec;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: bold;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover { color: var(--teal); }
+
+.hero {
+  height: 360px;
+  background: linear-gradient(120deg, #102b3b, #347b91);
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 28px;
+}
+
+section { padding: 75px 0; }
+
+h1 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+  color: var(--navy);
+  max-width: 850px;
+}
+
+h2 {
+  font-size: 30px;
+  color: var(--navy);
+}
+
+h3 { color: var(--navy); }
+
+.subtitle { color: var(--teal); }
+
+.intro {
+  max-width: 850px;
+  font-size: 17px;
+}
+
+.light { background: var(--light); }
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e1e8eb;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.card-content { padding: 24px; }
+
+.card-content h3 { margin-top: 0; }
+
+.wide { grid-column: 1 / -1; }
+
+.wide img { height: 290px; }
+
+.publication {
+  padding: 20px 0;
+  border-bottom: 1px solid #e1e8eb;
+}
+
+.button {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.button:hover { background: var(--teal); }
+
+footer {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+@media (max-width: 650px) {
+  header { padding: 20px; }
+  nav { gap: 12px; }
+  .hero { height: 230px; }
+  section { padding: 50px 0; }
+  .research-grid { grid-template-columns: 1fr; }
+  .wide { grid-column: auto; }
+  .wide img { height: 230px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="#home">
+    Emily Waggoner, Ph.D.
+  </a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<div class="hero" role="img"
+     aria-label="Ocean banner"></div>
+
+<section id="home">
+  <div class="container">
+    <h1>
+      Exploring phosphorus cycling from
+      microorganisms to ecosystems.
+    </h1>
+
+    <p class="subtitle">
+      Marine Biogeochemistry · Microbial Ecology ·
+      Aquatic Ecosystems
+    </p>
+
+    <h2>About Me</h2>
+
+    <p class="intro">
+      I am an aquatic biogeochemist investigating
+      how microorganisms shape and are shaped by
+      nutrient cycling. My work spans effluent-fed
+      rivers, intertidal zones, river plumes, and
+      the open ocean.
+    </p>
+
+    <p class="intro">
+      My research explores phosphorus bioavailability,
+      microbial enzymatic activity, and the
+      environmental fate of natural and synthetic
+      phosphorus compounds.
+    </p>
+  </div>
+</section>
+
+<section id="research" class="light">
+  <div class="container">
+    <h2>Research</h2>
+
+    <p>
+      My research examines how microorganisms acquire,
+      transform, and cycle phosphorus across aquatic
+      environments.
+    </p>
+
+    <div class="research-grid">
+
+      <article class="card">
+        <img src="images/microbes.jpg"
+             alt="Marine microbial research">
+        <div class="card-content">
+          <h3>Microbial Phosphorus Acquisition</h3>
+          <p>
+            Investigating how microbial enzymes
+            determine access to chemically diverse
+            organic phosphorus compounds.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/ocean.jpg"
+             alt="Oceanographic fieldwork">
+        <div class="card-content">
+          <h3>Coupled Biogeochemical Cycles</h3>
+          <p>
+            Exploring connections between phosphorus
+            acquisition and carbon and nitrogen cycling.
+          </p>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <img src="images/river.jpg"
+             alt="River research">
+        <div class="card-content">
+          <h3>
+            Synthetic Phosphorus Compounds
+            in Aquatic Environments
+          </h3>
+          <p>
+            Examining the distribution, microbial
+            transformation, and environmental fate
+            of synthetic organophosphorus compounds.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+    <h2>Publications</h2>
+
+    <p>
+      Selected peer-reviewed publications and
+      research datasets.
+    </p>
+
+    <div class="publication">
+      <p>
+        <strong>
+          Research on microbial utilization of
+          dissolved organic phosphorus
+        </strong>
+      </p>
+      <p>
+        Waggoner et al. (2024).
+        <em>FEMS Microbiology Ecology.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="cv" class="light">
+  <div class="container">
+    <h2>Curriculum Vitae</h2>
+
+    <p>
+      Download my CV to learn more about my
+      research, publications, teaching,
+      and professional experience.
+    </p>
+
+    <a class="button"
+       href="files/Emily_Waggoner_CV.pdf"
+       target="_blank"
+       rel="noopener">
+      Download CV
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+
+    <p>
+      Interested in research collaborations
+      or learning more about my work?
+    </p>
+
+    <p>Contact information coming soon.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Emily Waggoner
+</footer>
 
 </body>
 </html>
