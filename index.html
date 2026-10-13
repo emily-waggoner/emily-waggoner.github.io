@@ -1,45 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Emily Waggoner, Ph.D.</title>
 
 <style>
+
+/* ===== COLORS ===== */
+
 :root {
-  --navy: #193b4d;
-  --teal: #397b86;
-  --text: #273740;
-  --light: #f2f6f7;
+  --background: #191e22;
+  --surface: #252b30;
+  --card: #2c343a;
+  --accent: #69b7d0;
+  --text: #e2e6e9;
+  --heading: #f5f7f8;
+  --muted: #cbd5da;
+  --border: #3c474e;
 }
 
-* { box-sizing: border-box; }
+/* ===== GENERAL ===== */
 
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
   color: var(--text);
   line-height: 1.7;
 }
 
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 75px 0;
+  scroll-margin-top: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--heading);
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+h3 {
+  line-height: 1.4;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: #a5d9e8;
+}
+
+.light {
+  background: var(--surface);
+}
+
+/* ===== HEADER ===== */
+
 header {
-  background: white;
+  background: var(--background);
   padding: 22px 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
-  border-bottom: 1px solid #e4e9ec;
+  border-bottom: 1px solid #343c42;
 }
 
 .brand {
   font-size: 19px;
   font-weight: bold;
-  color: var(--navy);
+  color: var(--heading);
   text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--accent);
 }
 
 nav {
@@ -49,51 +107,71 @@ nav {
 }
 
 nav a {
-  color: var(--text);
+  color: var(--heading);
   text-decoration: none;
   font-size: 14px;
 }
 
-nav a:hover { color: var(--teal); }
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ===== FULL-SCREEN OCEAN BANNER ===== */
 
 .hero {
-  height: 360px;
-  background-image: url("images/banner.jpg");
+  position: relative;
+  min-height: 80vh;
+  min-height: 80svh;
+  padding: 0;
+
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.25) 50%,
+      rgba(0, 0, 0, 0.05) 100%
+    ),
+    url("images/banner.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-end;
 }
 
-.container {
+.hero-content {
+  width: 100%;
   max-width: 1080px;
-  margin: auto;
-  padding: 0 28px;
+  margin: 0 auto;
+  padding: 60px 28px 85px;
 }
 
-section { padding: 75px 0; }
-
-h1 {
-  font-size: clamp(30px, 4vw, 46px);
-  line-height: 1.2;
-  color: var(--navy);
-  max-width: 850px;
+.hero h1 {
+  color: #ffffff;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.15;
+  max-width: 900px;
+  margin: 0 0 22px;
+  font-weight: 600;
 }
 
-h2 {
-  font-size: 30px;
-  color: var(--navy);
+.hero .subtitle {
+  color: #ffffff;
+  font-size: clamp(14px, 1.6vw, 18px);
+  letter-spacing: 0.4px;
+  margin: 0;
 }
 
-h3 { color: var(--navy); }
-
-.subtitle { color: var(--teal); }
+/* ===== ABOUT ME ===== */
 
 .intro {
   max-width: 850px;
   font-size: 17px;
 }
 
-.light { background: var(--light); }
+/* ===== RESEARCH ===== */
 
 .research-grid {
   display: grid;
@@ -103,8 +181,8 @@ h3 { color: var(--navy); }
 }
 
 .card {
-  background: white;
-  border: 1px solid #e1e8eb;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 5px;
   overflow: hidden;
 }
@@ -116,146 +194,126 @@ h3 { color: var(--navy); }
   object-fit: cover;
 }
 
-.card-content { padding: 24px; }
+.card-content {
+  padding: 24px;
+}
 
-.card-content h3 { margin-top: 0; }
+.card-content h3 {
+  color: var(--heading);
+  margin-top: 0;
+}
 
-.wide { grid-column: 1 / -1; }
+.card-content p {
+  color: var(--muted);
+}
 
-.wide img { height: 290px; }
+.wide {
+  grid-column: 1 / -1;
+}
+
+.wide img {
+  height: 290px;
+}
+
+/* ===== PUBLICATIONS ===== */
 
 .publication {
   padding: 20px 0;
-  border-bottom: 1px solid #e1e8eb;
+  border-bottom: 1px solid var(--border);
 }
+
+.publication p {
+  margin: 6px 0;
+}
+
+.publication a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.publication a:hover {
+  color: #a5d9e8;
+  text-decoration: underline;
+}
+
+/* ===== CV BUTTON ===== */
 
 .button {
   display: inline-block;
-  background: var(--navy);
-  color: white;
+  background: var(--accent);
+  color: #14232b;
   padding: 12px 24px;
   text-decoration: none;
   border-radius: 4px;
+  font-weight: bold;
 }
 
-.button:hover { background: var(--teal); }
+.button:hover {
+  background: #a5d9e8;
+  color: #14232b;
+}
+
+/* ===== FOOTER ===== */
 
 footer {
-  background: var(--navy);
-  color: white;
+  background: #14191d;
+  color: #b9c5cb;
   text-align: center;
   padding: 30px;
 }
 
+/* ===== MOBILE ===== */
+
 @media (max-width: 650px) {
-  header { padding: 20px; }
-  nav { gap: 12px; }
-  .hero { height: 230px; }
-  section { padding: 50px 0; }
-  .research-grid { grid-template-columns: 1fr; }
-  .wide { grid-column: auto; }
-  .wide img { height: 230px; }
-}
-  /* ===== CHARCOAL + OCEAN BLUE THEME ===== */
 
-:root {
-  --navy: #e8f2f6;
-  --teal: #69b7d0;
-  --text: #e2e6e9;
-  --light: #252b30;
-}
+  header {
+    padding: 20px;
+  }
 
-/* Main background */
-body {
-  background-color: #191e22;
-  color: #e2e6e9;
-}
+  nav {
+    gap: 12px;
+  }
 
-/* Navigation */
-header {
-  background-color: #191e22;
-  border-bottom: 1px solid #343c42;
-}
+  .hero {
+    min-height: 70vh;
+    min-height: 70svh;
+  }
 
-header a,
-nav a,
-.brand {
-  color: #f5f7f8;
-}
+  .hero-content {
+    padding: 35px 24px 55px;
+  }
 
-nav a:hover {
-  color: #69b7d0;
+  section {
+    padding: 50px 0;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide {
+    grid-column: auto;
+  }
+
+  .wide img {
+    height: 230px;
+  }
+
 }
 
-/* Sections */
-section {
-  color: #e2e6e9;
-}
-
-section.light,
-.light {
-  background-color: #252b30;
-}
-
-/* Headings */
-h1, h2, h3 {
-  color: #f5f7f8;
-}
-
-h2 {
-  border-bottom-color: #69b7d0;
-}
-
-/* Research cards */
-.card {
-  background-color: #2c343a;
-  color: #e2e6e9;
-  border: 1px solid #3c474e;
-}
-
-.card h3 {
-  color: #f5f7f8;
-}
-
-.card p {
-  color: #cbd5da;
-}
-
-/* Publication links */
-.publication a,
-a {
-  color: #69b7d0;
-}
-
-a:hover {
-  color: #a5d9e8;
-}
-
-/* Publication dividers */
-.publication {
-  border-bottom-color: #3c474e;
-}
-
-/* Footer */
-footer {
-  background-color: #14191d;
-  color: #b9c5cb;
-}
-
-/* Keep white text over ocean banner */
-.hero h1,
-.hero .subtitle {
-  color: #ffffff;
-}
 </style>
 </head>
 
 <body>
 
+<!-- ===== NAVIGATION ===== -->
+
 <header>
+
   <a class="brand" href="#home">
     Emily Waggoner, Ph.D.
   </a>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#research">Research</a>
@@ -263,15 +321,17 @@ footer {
     <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
   </nav>
+
 </header>
 
 <main>
 
-<div class="hero" role="img"
-     aria-label="Ocean banner"></div>
+<!-- ===== HOME / OCEAN BANNER ===== -->
 
-<section id="home">
-  <div class="container">
+<section id="home" class="hero">
+
+  <div class="hero-content">
+
     <h1>
       Exploring phosphorus cycling from
       microorganisms to ecosystems.
@@ -281,6 +341,16 @@ footer {
       Marine Biogeochemistry · Microbial Ecology ·
       Aquatic Ecosystems
     </p>
+
+  </div>
+
+</section>
+
+<!-- ===== ABOUT ME ===== -->
+
+<section id="about">
+
+  <div class="container">
 
     <h2>About Me</h2>
 
@@ -298,11 +368,17 @@ footer {
       environmental fate of natural and synthetic
       phosphorus compounds.
     </p>
+
   </div>
+
 </section>
 
+<!-- ===== RESEARCH ===== -->
+
 <section id="research" class="light">
+
   <div class="container">
+
     <h2>Research</h2>
 
     <p>
@@ -313,52 +389,87 @@ footer {
 
     <div class="research-grid">
 
+      <!-- Research Card 1 -->
+
       <article class="card">
-        <img src="images/microbes.jpg"
-             alt="Marine microbial research">
+
+        <img
+          src="images/microbes.jpg"
+          alt="Marine microbial research"
+        >
+
         <div class="card-content">
+
           <h3>Microbial Phosphorus Acquisition</h3>
+
           <p>
             Investigating how microbial enzymes
             determine access to chemically diverse
             organic phosphorus compounds.
           </p>
+
         </div>
+
       </article>
 
+      <!-- Research Card 2 -->
+
       <article class="card">
-        <img src="images/ocean.jpg"
-             alt="Oceanographic fieldwork">
+
+        <img
+          src="images/ocean.jpg"
+          alt="Oceanographic fieldwork"
+        >
+
         <div class="card-content">
+
           <h3>Coupled Biogeochemical Cycles</h3>
+
           <p>
             Exploring connections between phosphorus
             acquisition and carbon and nitrogen cycling.
           </p>
+
         </div>
+
       </article>
 
+      <!-- Research Card 3 -->
+
       <article class="card wide">
-        <img src="images/river2.jpg"
-             alt="River research">
+
+        <img
+          src="images/river2.jpg"
+          alt="River research"
+        >
+
         <div class="card-content">
+
           <h3>
             Synthetic Phosphorus Compounds
             in Aquatic Environments
           </h3>
+
           <p>
             Examining the distribution, microbial
             transformation, and environmental fate
             of synthetic organophosphorus compounds.
           </p>
+
         </div>
+
       </article>
 
     </div>
+
   </div>
+
 </section>
 
+<!-- ===== PUBLICATIONS ===== -->
+
 <section id="publications">
+
   <div class="container">
 
     <h2>Publications</h2>
@@ -367,53 +478,73 @@ footer {
       Peer-reviewed publications and research datasets.
     </p>
 
-    <!-- PUBLICATION 1: 2026 -->
+    <!-- Publication 1 -->
+
     <div class="publication">
+
       <p>
         <strong>
-          <a href="https://doi.org/10.1038/s41597-026-08413-7"
-             target="_blank" rel="noopener">
+          <a
+            href="https://doi.org/10.1038/s41597-026-08413-7"
+            target="_blank"
+            rel="noopener"
+          >
             Global compilation of in situ particulate
             organic carbon, nitrogen, and phosphorus
             concentrations in coastal and open ocean waters
           </a>
         </strong>
       </p>
+
       <p>
         Fumenia, A., Loisel, H., Moutin, T., et al. (2026).
         <em>Scientific Data.</em>
       </p>
+
     </div>
 
-    <!-- PUBLICATION 2: 2026 -->
+    <!-- Publication 2 -->
+
     <div class="publication">
+
       <p>
         <strong>
-          <a href="https://doi.org/10.1038/s41597-026-07868-y"
-             target="_blank" rel="noopener">
+          <a
+            href="https://doi.org/10.1038/s41597-026-07868-y"
+            target="_blank"
+            rel="noopener"
+          >
             A Global Oceanic Dataset of Dissolved
             Organophosphate Esters
           </a>
         </strong>
       </p>
+
       <p>
         <strong>Waggoner, E. M.</strong>,
         Frost, C. J., &amp; Duhamel, S. (2026).
         <em>Scientific Data.</em>
       </p>
+
     </div>
 
-    <!-- PUBLICATION 3: 2024 -->
+    <!-- Publication 3 -->
+
     <div class="publication">
+
       <p>
         <strong>
-          <a href="https://doi.org/10.1093/femsec/fiae099"
-             target="_blank" rel="noopener">
+          <a
+            href="https://doi.org/10.1093/femsec/fiae099"
+            target="_blank"
+            rel="noopener"
+          >
             Dissolved organic phosphorus bond-class
             utilization by Synechococcus
           </a>
         </strong>
       </p>
+
       <p>
         <strong>Waggoner, E. M.</strong>,
         Djaoudi, K., Diaz, J. M., &amp;
@@ -421,25 +552,40 @@ footer {
         <em>FEMS Microbiology Ecology</em>,
         100(9), fiae099.
       </p>
+
     </div>
-    
+
+  </div>
+
 </section>
+
+<!-- ===== CV ===== -->
 
 <section id="cv" class="light">
+
   <div class="container">
+
     <h2>Curriculum Vitae</h2>
 
-    <a class="button"
-       href="files/Emily_Waggoner_CV.pdf"
-       target="_blank"
-       rel="noopener">
+    <a
+      class="button"
+      href="files/Emily_Waggoner_CV.pdf"
+      target="_blank"
+      rel="noopener"
+    >
       Download CV
     </a>
+
   </div>
+
 </section>
 
+<!-- ===== CONTACT ===== -->
+
 <section id="contact">
+
   <div class="container">
+
     <h2>Contact</h2>
 
     <p>
@@ -448,10 +594,14 @@ footer {
     </p>
 
     <p>Contact information coming soon.</p>
+
   </div>
+
 </section>
 
 </main>
+
+<!-- ===== FOOTER ===== -->
 
 <footer>
   © 2026 Emily Waggoner
