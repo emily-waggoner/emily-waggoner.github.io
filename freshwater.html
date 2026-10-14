@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Freshwater Fieldwork | Emily M. Waggoner, Ph.D.</title>
+
+<style>
+
+/* ===== COLORS ===== */
+
+:root {
+  --background: #191e22;
+  --surface: #252b30;
+  --card: #2c343a;
+  --accent: #69b7d0;
+  --text: #e2e6e9;
+  --heading: #f5f7f8;
+  --muted: #cbd5da;
+  --border: #3c474e;
+}
+
+/* ===== GENERAL ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 75px 0;
+}
+
+h1, h2, h3 {
+  color: var(--heading);
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+h3 {
+  line-height: 1.4;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: #a5d9e8;
+}
+
+.light {
+  background: var(--surface);
+}
+
+/* ===== HEADER ===== */
+
+header {
+  background: var(--background);
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-bottom: 1px solid #343c42;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: bold;
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--heading);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ===== PAGE INTRO ===== */
+
+.page-intro {
+  padding: 85px 0 65px;
+}
+
+.page-intro p {
+  max-width: 800px;
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* ===== FIELDWORK CARDS ===== */
+
+.fieldwork-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h3 {
+  margin: 0 0 12px;
+}
+
+.card-content p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ===== BACK LINK ===== */
+
+.back-link {
+  display: inline-block;
+  margin-top: 35px;
+  text-decoration: none;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  background: #14191d;
+  color: #b9c5cb;
+  text-align: center;
+  padding: 30px;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 650px) {
+
+  header {
+    padding: 20px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  .page-intro {
+    padding: 60px 0 40px;
+  }
+
+  .fieldwork-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 230px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+
+<header>
+
+  <a class="brand" href="index.html#home">
+    Emily M. Waggoner, Ph.D.
+  </a>
+
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#research">Research</a>
+    <a href="index.html#scicomm">Sci Comm</a>
+    <a href="index.html#fieldwork">Fieldwork</a>
+    <a href="index.html#publications">Publications</a>
+    <a href="index.html#cv">CV</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+</header>
+
+<main>
+
+<!-- ===== PAGE INTRO ===== -->
+
+<section class="page-intro">
+
+  <div class="container">
+
+    <h1>Freshwater Fieldwork</h1>
+
+    <p>
+      Investigating nutrient cycling, microbial
+      processes, and environmental contaminants
+      across freshwater ecosystems.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ===== FRESHWATER PROJECTS ===== -->
+
+<section class="light">
+
+  <div class="container">
+
+    <h2>Field Projects</h2>
+
+    <div class="fieldwork-grid">
+
+      <!-- Project 1 -->
+
+      <article class="card">
+
+        <img
+          src="images/river2.jpg"
+          alt="Santa Cruz River fieldwork"
+          loading="lazy"
+        >
+
+        <div class="card-content">
+
+          <h3>Santa Cruz River, Arizona</h3>
+
+          <p>
+            Investigating synthetic organophosphorus
+            contaminants, microbial communities,
+            and phosphorus cycling along an
+            effluent-fed river system.
+          </p>
+
+        </div>
+
+      </article>
+
+      <!-- ADD FUTURE PROJECT CARDS HERE -->
+
+    </div>
+
+    <a class="back-link" href="index.html#fieldwork">
+      ← Back to Fieldwork
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+  © 2026 Emily Waggoner
+</footer>
+
+</body>
+</html>
