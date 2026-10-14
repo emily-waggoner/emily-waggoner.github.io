@@ -262,7 +262,59 @@ footer {
   padding: 30px;
 }
 
-/* ===== MOBILE ===== */
+/* ===== FIELDWORK ===== */
+
+.fieldwork-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.fieldwork-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.fieldwork-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.fieldwork-card img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.fieldwork-card-content {
+  padding: 20px;
+}
+
+.fieldwork-card h3 {
+  margin: 0 0 10px;
+  color: var(--heading);
+  font-size: 19px;
+}
+
+.fieldwork-card span {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+@media (max-width: 750px) {
+  .fieldwork-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  /* ===== MOBILE ===== */
 
 @media (max-width: 650px) {
 
@@ -318,7 +370,7 @@ footer {
     <a href="#home">Home</a>
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
-    <a href="#fieldwork.html">Fieldwork</a>
+    <a href="#fieldwork">Fieldwork</a>
     <a href="#scicomm">Sci Comm</a>
     <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
@@ -588,6 +640,75 @@ footer {
 </section>
 
 </div>
+
+</section>
+
+  <!-- ===== FIELDWORK ===== -->
+
+<section id="fieldwork">
+
+  <div class="container">
+
+    <h2>Fieldwork</h2>
+
+    <p>
+      Explore my oceanographic expeditions,
+      coastal research, and freshwater fieldwork.
+    </p>
+
+    <div class="fieldwork-grid">
+
+      <!-- Oceanographic Cruises -->
+
+      <a class="fieldwork-card" href="cruises.html">
+
+        <img
+          src="images/cruise1.jpg"
+          alt="Oceanographic research cruise"
+        >
+
+        <div class="fieldwork-card-content">
+          <h3>Oceanographic Cruises</h3>
+          <span>Explore →</span>
+        </div>
+
+      </a>
+
+      <!-- Coastal Fieldwork -->
+
+      <a class="fieldwork-card" href="coastal.html">
+
+        <img
+          src="images/coastal1.jpg"
+          alt="Coastal field research"
+        >
+
+        <div class="fieldwork-card-content">
+          <h3>Coastal Fieldwork</h3>
+          <span>Explore →</span>
+        </div>
+
+      </a>
+
+      <!-- Freshwater Fieldwork -->
+
+      <a class="fieldwork-card" href="freshwater.html">
+
+        <img
+          src="images/river2.jpg"
+          alt="Freshwater field research"
+        >
+
+        <div class="fieldwork-card-content">
+          <h3>Freshwater Fieldwork</h3>
+          <span>Explore →</span>
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
   
